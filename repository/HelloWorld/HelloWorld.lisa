@@ -1,0 +1,98 @@
+
+int intInput(){
+    byte a = 48;
+    int b = 0;
+    while(a != 10){
+        b = b*10 + a-48 ;
+        user_input(a,1);
+        printvar(a);
+    }
+    return b;
+}
+int strInput(){
+    int a = 0;
+    int n = 1;
+    while(a != 10){
+        user_input(a,4);
+        push_stack(a,4);
+        n = n+1;
+        printvar(a);
+    }
+    int[] arr = new int[n];
+    arr[0] = n;
+    
+    int count = 1;
+    int ch = 0;
+    while(count != n){
+        pop_stack(ch,4);
+        arr[count] = ch;
+        count = count+1;
+    }
+    return arr;
+}
+int printStr(int str){
+    int size = str[0]-1;
+    while(size!=1){
+        int ch = str[size];
+        printvar(ch);
+        size = size-1;
+    }
+}
+int printChar(int ch){
+    int a = ch;
+    printvar(a);
+}
+
+
+int main(){
+
+    printStr("=== Lightweight Instruction Set Artitechture PROCESSOR DEMO ===\n");
+
+    printStr("LISA is a custom multi-cycle processor built from scratch.\n");
+    printStr("It demonstrates how real CPUs execute instructions step by step.\n\n");
+
+    printStr("Key Features:\n");
+    printStr("- Custom Instruction Set Architecture\n");
+    printStr("- Multi-cycle execution (Fetch → Decode → Execute)\n");
+    printStr("- Stack-based memory model\n");
+    printStr("- Address Generation Unit (AGU)\n");
+    printStr("- Memory-mapped I/O for output\n\n");
+
+    printStr("Execution Flow:\n");
+    printStr("1. Instructions are fetched from ROM\n");
+    printStr("2. Decoded by Control Unit\n");
+    printStr("3. Operands are read from memory\n");
+    printStr("4. ALU performs computation\n");
+    printStr("5. Results are written back\n\n");
+
+    printStr("This project also includes a full compiler + assembler pipeline.\n");
+    printStr("Programs are compiled to machine code and executed on hardware.\n\n");
+
+    printStr("Printing newline example:\n");
+    printStr("\n");
+
+    printStr("_______________________________________Welcome_______________________________________\n");
+    printStr("\n\n");
+    printStr("Enter any key to start : ");
+    strInput();
+
+    printStr("Now entering infinite execution loop...\n\n");
+
+    while(1){
+        printStr("HelloWorld!\n");
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

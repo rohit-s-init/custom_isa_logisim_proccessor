@@ -1,0 +1,154 @@
+let printInt(let n){
+    if(n==0){
+        printStr("0");
+        return 0;
+    }
+    if(n<0){
+        printStr("-");
+        n = n*(0-1);
+    }
+    let a = n;
+    while(n){
+        let dig = n%10+48;
+        push_stack(dig,1);
+        n = n/10;
+    }
+    let dig = 0;
+    while(a){
+        pop_stack(dig,1);
+        printvar(dig);
+        a = a/10;
+    }
+    return n;
+}
+let intInput(){
+    byte a = 48;
+    let b = 0;
+    while(a != 10){
+        b = b*10 + a-48 ;
+        user_input(a,1);
+        printvar(a);
+    }
+    return b;
+}
+let strInput(){
+    let a = 0;
+    let n = 1;
+    while(a != 10){
+        user_input(a,4);
+        push_stack(a,4);
+        n = n+1;
+        printvar(a);
+    }
+    int[] arr = new int[n];
+    arr[0] = n;
+    
+    let count = 1;
+    let ch = 0;
+    while(count != n){
+        pop_stack(ch,4);
+        arr[count] = ch;
+        count = count+1;
+    }
+    return arr;
+}
+let printStr(let str){
+    let size = str[0]-1;
+    while(size!=1){
+        let ch = str[size];
+        printvar(ch);
+        size = size-1;
+    }
+}
+let printChar(let ch){
+    let a = ch;
+    printvar(a);
+}
+
+
+
+
+let initBoard(let b){
+    let i = 0;
+    while(i != 9){
+        b[i] = 32;
+        i = i + 1;
+    }
+}
+
+let printBoard(let b){
+    printChar(b[0]); printStr("|"); printChar(b[1]); printStr("|"); printChar(b[2]); printStr("\n");
+    printStr("-+-+-\n");
+    printChar(b[3]); printStr("|"); printChar(b[4]); printStr("|"); printChar(b[5]); printStr("\n");
+    printStr("-+-+-\n");
+    printChar(b[6]); printStr("|"); printChar(b[7]); printStr("|"); printChar(b[8]); printStr("\n");
+}
+
+let checkWin(let b, let p){
+    if(b[0]==p && b[1]==p && b[2]==p){ return 1; }
+    if(b[3]==p && b[4]==p && b[5]==p){ return 1; }
+    if(b[6]==p && b[7]==p && b[8]==p){ return 1; }
+    if(b[0]==p && b[3]==p && b[6]==p){ return 1; }
+    if(b[1]==p && b[4]==p && b[7]==p){ return 1; }
+    if(b[2]==p && b[5]==p && b[8]==p){ return 1; }
+    if(b[0]==p && b[4]==p && b[8]==p){ return 1; }
+    if(b[2]==p && b[4]==p && b[6]==p){ return 1; }
+    return 0;
+}
+
+let isFull(let b){
+    let i = 0;
+    while(i != 9){
+        if(b[i] == 32){ return 0; }
+        i = i + 1;
+    }
+    return 1;
+}
+
+int main(){
+
+    int[] board = new int[9];
+    initBoard(board);
+
+    let player = 0;
+    let pos = 0;
+    let mark = 0;
+
+    while(1){
+
+        printBoard(board);
+
+        if(player == 0){
+            printStr("Player X turn (0-8): ");
+            mark = 88;
+        }
+        if(player == 1){
+            printStr("Player O turn (0-8): ");
+            mark = 79;
+        }
+
+        pos = intInput();
+
+        if(board[pos] == 32){
+            board[pos] = mark;
+        }
+
+        if(checkWin(board, mark)){
+            printBoard(board);
+            if(player == 0){ printStr("Player X wins\n"); }
+            if(player == 1){ printStr("Player O wins\n"); }
+            while(1){}
+        }
+
+        if(isFull(board)){
+            printBoard(board);
+            printStr("Draw\n");
+            while(1){}
+        }
+
+        if(player == 0){ player = 1; }
+        else{ player = 0; }
+
+        cls();
+    }
+}

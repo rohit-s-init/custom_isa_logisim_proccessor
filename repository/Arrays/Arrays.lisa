@@ -1,0 +1,74 @@
+int printInt(int n){
+    int a = n;
+    while(n){
+        int dig = n%10+48;
+        push_stack(dig,1);
+        n = n/10;
+    }
+    int dig = 0;
+    while(a){
+        pop_stack(dig,1);
+        printvar(dig);
+        a = a/10;
+    }
+    return n;
+}
+int intInput(){
+    byte a = 48;
+    int b = 0;
+    while(a != 10){
+        b = b*10 + a-48 ;
+        user_input(a,1);
+        printvar(a);
+    }
+    return b;
+}
+int strInput(){
+    int a = 0;
+    int n = 1;
+    while(a != 10){
+        user_input(a,4);
+        push_stack(a,4);
+        n = n+1;
+        printvar(a);
+    }
+    int[] arr = new int[n];
+    arr[0] = n;
+    
+    int count = 1;
+    int ch = 0;
+    while(count != n){
+        pop_stack(ch,4);
+        arr[count] = ch;
+        count = count+1;
+    }
+    return arr;
+}
+int printStr(int str){
+    int size = str[0]-1;
+    while(size!=1){
+        int ch = str[size];
+        printvar(ch);
+        size = size-1;
+    }
+}
+int main(){
+    let[] arr = new let[3];
+
+    printStr("enter number 1 ");
+    arr[0] = intInput();
+
+    printStr("enter number 2 ");
+    arr[1] = intInput();
+
+    printStr("enter number 3 ");
+    arr[2] = intInput();
+
+    printStr("the numbers are : ");
+    printInt(arr[0]);
+    printStr(" ");
+    printInt(arr[1]);
+    printStr(" ");
+    printInt(arr[2]);
+    printStr(" ");
+}

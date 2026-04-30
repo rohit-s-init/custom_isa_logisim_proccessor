@@ -1,0 +1,99 @@
+let printInt(let n){
+    if(n==0){
+        printStr("0");
+        return 0;
+    }
+    if(n<0){
+        printStr("-");
+        n = n*(0-1);
+    }
+    let a = n;
+    while(n){
+        let dig = n%10+48;
+        push_stack(dig,1);
+        n = n/10;
+    }
+    let dig = 0;
+    while(a){
+        pop_stack(dig,1);
+        printvar(dig);
+        a = a/10;
+    }
+    return n;
+}
+let intInput(){
+    byte a = 48;
+    let b = 0;
+    while(a != 10){
+        b = b*10 + a-48 ;
+        user_input(a,1);
+        printvar(a);
+    }
+    return b;
+}
+let strInput(){
+    let a = 0;
+    let n = 1;
+    while(a != 10){
+        user_input(a,4);
+        push_stack(a,4);
+        n = n+1;
+        printvar(a);
+    }
+    int[] arr = new int[n];
+    arr[0] = n;
+    
+    let count = 1;
+    let ch = 0;
+    while(count != n){
+        pop_stack(ch,4);
+        arr[count] = ch;
+        count = count+1;
+    }
+    return arr;
+}
+let printStr(let str){
+    let size = str[0]-1;
+    while(size!=1){
+        let ch = str[size];
+        printvar(ch);
+        size = size-1;
+    }
+}
+let printChar(let ch){
+    let a = ch;
+    printvar(a);
+}
+
+
+int main(){
+    printStr("Enter number 1 : ");
+    let a = intInput();
+
+    printStr("Enter number 2 : ");
+    let b = intInput();
+
+    printStr("\nAll Arithematic expressions\n");
+    printStr("Addition + : ");
+    printInt(a+b);
+
+    printStr("\n");
+    printStr("Substraction - : ");
+    printInt(a-b);
+
+    printStr("\n");
+    printStr("Multiplication * : ");
+    printInt(a*b);
+
+    printStr("\n");
+    printStr("Division / : ");
+    printInt(a/b);
+
+    printStr("\n");
+    printStr("Mod % : ");
+    printInt(a%b);
+
+
+
+
+}
