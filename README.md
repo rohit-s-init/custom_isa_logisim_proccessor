@@ -23,6 +23,87 @@ at the register-transfer level, closely resembling how real CPUs are implemented
 
 <hr>
 
+
+
+<h2>🚀 How to Run</h2>
+
+<h3>⬇️ Step 0: Install Logisim Evolution</h3>
+<ul>
+<li>Download Logisim Evolution from: 
+    <a href="https://github.com/logisim-evolution/logisim-evolution">https://github.com/logisim-evolution/logisim-evolution</a>
+</li>
+<li>Install / extract the application</li>
+<li>Open the project file: <b>logisim_evolution.circ</b></li>
+</ul>
+
+<h3>🧩 Step 1: Compile the Code</h3>
+<ul>
+<li>Write your program using the LISA ISA / compiler</li>
+<li>Compile it to generate a <b>.hex</b> file</li>
+<li>Example programs are already available in the repository</li>
+</ul>
+
+<h3>📥 Step 2: Load Program into ROM</h3>
+<p class="center">
+<img src="https://example.com/image1.png" width="500" alt="ROM View">
+</p>
+<ul>
+<li>Locate the <b>ROM component</b> in the circuit</li>
+<li>This ROM stores your compiled machine code</li>
+</ul>
+
+<h3>🖱 Step 3: Open ROM Options</h3>
+<p class="center">
+<img src="https://example.com/image2.png" width="500" alt="Right Click ROM">
+</p>
+<ul>
+<li><b>Right-click</b> on the ROM</li>
+<li>Select <b>"Load Image..."</b></li>
+</ul>
+
+<h3>📂 Step 4: Load the .hex File</h3>
+<p class="center">
+<img src="https://example.com/image3.png" width="500" alt="Load Image Dialog">
+</p>
+<ul>
+<li>Select your compiled <b>.hex</b> file</li>
+<li>Click <b>Open</b></li>
+<li>The ROM will now contain your program</li>
+</ul>
+
+<h3>⚡ Step 5: Run the Simulation</h3>
+<p class="center">
+<img src="https://example.com/image4.png" width="500" alt="Simulation Running">
+</p>
+<ul>
+<li>Go to <b>Simulate → Auto Tick Frequency</b></li>
+<li>Select the best frequency compatible with your device</li>
+</ul>
+
+<h3>🎮 Controls</h3>
+<ul>
+<li><b>Run:</b> Ctrl + K</li>
+<li><b>Reset:</b> Ctrl + R</li>
+</ul>
+
+<h3>🖥 Output</h3>
+<ul>
+<li>The output is visible in the <b>terminal (console output unit)</b> inside the circuit</li>
+</ul>
+
+<h3>💡 Notes</h3>
+<ul>
+<li>Make sure the <b>.hex</b> file is correctly generated before loading</li>
+<li>If the program does not run:
+    <ul>
+        <li>Reset using Ctrl + R</li>
+        <li>Reduce simulation frequency</li>
+    </ul>
+</li>
+<li>Example codes are included in the repository for testing</li>
+</ul>
+
+
 <h2>✨ Features</h2>
 
 <ul>
