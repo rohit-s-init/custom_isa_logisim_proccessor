@@ -34,19 +34,19 @@ at the register-transfer level, closely resembling how real CPUs are implemented
 </li>
 <li>Install / extract the application</li>
 <li>Open the project file: <b>logisim_evolution.circ</b> inside the logisim</li>
-<li>Once the circuit is open , open main circuit using navbar (for testing purpose press ctrl+k to run test code)</li>
+<li>Once the circuit is open , open main circuit using navbar (for testing purpose press ctrl+k to run test code, output would be shown on the terminal)</li>
 </ul>
 
 <h3>🧩 Step 1: Compile the Code</h3>
 <ul>
 <li>Write your program using the LISA ISA / compiler</li>
 <li>Compile it to generate a <b>.hex</b> file</li>
-<li>Example programs are already available in the repository</li>
+<li>Example programs (compiled) are already available in the repository</li>
 </ul>
 
 <h3>📥 Step 2: Load Program into ROM</h3>
 <p class="center">
-<img src="https://drive.usercontent.google.com/download?id=1J3rWFDfzPgMXZ-JDQeGsbTcj0Nd3Yz_Q&export=view&authuser=0" width="500" alt="ROM View">
+<img src="https://raw.githubusercontent.com/rohit-s-init/custom_isa_logisim_proccessor/refs/heads/main/images/rom_image.png" width="500" alt="ROM View">
 </p>
 <ul>
 <li>Locate the <b>ROM component</b> in the circuit</li>
@@ -55,7 +55,7 @@ at the register-transfer level, closely resembling how real CPUs are implemented
 
 <h3>🖱 Step 3: Open ROM Options</h3>
 <p class="center">
-<img src="https://drive.usercontent.google.com/download?id=1rcfkopnvOk61L9YtzQu5NbR9ZDadzjWu&export=view&authuser=0" width="500" alt="Right Click ROM">
+<img src="https://raw.githubusercontent.com/rohit-s-init/custom_isa_logisim_proccessor/refs/heads/main/images/rom_right_click.png" width="500" alt="Right Click ROM">
 </p>
 <ul>
 <li><b>Right-click</b> on the ROM</li>
@@ -64,7 +64,7 @@ at the register-transfer level, closely resembling how real CPUs are implemented
 
 <h3>📂 Step 4: Load the .hex File</h3>
 <p class="center">
-<img src="https://drive.google.com/uc?export=view&id=1Y3gvs8e2JxxrhcSw_6hYDQgp3jfmJYEA" width="500" alt="Load Image Dialog">
+<img src="https://raw.githubusercontent.com/rohit-s-init/custom_isa_logisim_proccessor/refs/heads/main/images/select_hex_file.png" width="500" alt="Load Image Dialog">
 </p>
 <ul>
 <li>Select your compiled <b>.hex</b> file</li>
@@ -73,9 +73,6 @@ at the register-transfer level, closely resembling how real CPUs are implemented
 </ul>
 
 <h3>⚡ Step 5: Run the Simulation</h3>
-<p class="center">
-<img src="https://example.com/image4.png" width="500" alt="Simulation Running">
-</p>
 <ul>
 <li>Go to <b>Simulate → Auto Tick Frequency</b></li>
 <li>Select the best frequency compatible with your device</li>
